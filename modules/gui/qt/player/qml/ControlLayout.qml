@@ -167,6 +167,14 @@ FocusScope {
             }
         }
 
+        // Dummy button 
+        ToolButton {
+            text: qsTr("Dummy")
+            Layout.alignment: Qt.AlignVCenter
+            onClicked: console.log("Dummy button clicked")
+            Accessible.description: qsTr("Dummy action")
+        }
+
         Item {
             Layout.fillWidth: visible
             visible: (controlLayout.alignment & Qt.AlignLeft)

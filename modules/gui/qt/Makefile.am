@@ -110,6 +110,8 @@ libqt_plugin_la_SOURCES = \
 	gui/qt/components/playlist/vlc_model.hpp \
 	gui/qt/components/playlist/playlist_model.cpp \
 	gui/qt/components/playlist/playlist_model.hpp \
+	gui/qt/components/playlist/songsettingsdialog.cpp \
+	gui/qt/components/playlist/songsettingsdialog.hpp \
 	gui/qt/components/playlist/playlist_item.cpp \
 	gui/qt/components/playlist/playlist_item.hpp \
 	gui/qt/components/playlist/standardpanel.cpp \
@@ -213,6 +215,7 @@ nodist_libqt_plugin_la_SOURCES = \
 	gui/qt/components/epg/EPGWidget.moc.cpp \
 	gui/qt/components/playlist/views.moc.cpp \
 	gui/qt/components/playlist/vlc_model.moc.cpp \
+	gui/qt/components/playlist/songsettingsdialog.moc.cpp \
 	gui/qt/components/playlist/playlist_model.moc.cpp \
 	gui/qt/components/playlist/playlist.moc.cpp \
 	gui/qt/components/playlist/standardpanel.moc.cpp \

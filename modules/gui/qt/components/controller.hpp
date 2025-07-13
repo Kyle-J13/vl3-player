@@ -34,8 +34,8 @@
 #include <QString>
 #include <QSizeGrip>
 
-#define MAIN_TB1_DEFAULT "64;39;64;38;65;26"
-#define MAIN_TB2_DEFAULT "0-2;64;3;1;4;64;7;9;64;10;20;19;64-4;37;65;35-4;26"
+#define MAIN_TB1_DEFAULT "64;39;64;38;65;"
+#define MAIN_TB2_DEFAULT "0-2;64;3;1;4;64;7;9;64;10;20;19;64-4;37;65;35-4;"
 #define ADV_TB_DEFAULT "12;11;13;14"
 #define INPT_TB_DEFAULT "43;33-4;44"
 #define FSC_TB_DEFAULT "0-2;64;3;1;4;64;37;64;38;64;8;65;25;35-4;34"
@@ -80,8 +80,7 @@ typedef enum buttonType_e
     PREVIOUS_BUTTON,
     NEXT_BUTTON,
     OPEN_SUB_BUTTON,
-    FULLWIDTH_BUTTON,
-    DUMMY_BUTTON,  
+    FULLWIDTH_BUTTON, 
     BUTTON_MAX,
 
     SPLITTER = 0x20,
@@ -111,7 +110,7 @@ static const char* const nameL[BUTTON_MAX] = { N_("Play"), N_("Stop"), N_("Open"
     N_("Record"), N_("A→B Loop"), N_("Frame By Frame"), N_("Trickplay Reverse"),
     N_("Step backward" ), N_("Step forward"), N_("Quit"), N_("Random"),
     N_("Loop / Repeat"), N_("Information"), N_("Previous"), N_("Next"),
-    N_("Open subtitles"), N_("Dock fullscreen controller"), N_("Dummy"),
+    N_("Open subtitles"), N_("Dock fullscreen controller"), 
 };
 static const char* const tooltipL[BUTTON_MAX] = { I_PLAY_TOOLTIP,
     N_("Stop playback"), N_("Open a medium"),
@@ -125,7 +124,7 @@ static const char* const tooltipL[BUTTON_MAX] = { I_PLAY_TOOLTIP,
     N_("Random"), N_("Change the loop and repeat modes"), N_("Information"),
     N_("Previous media in the playlist"), N_("Next media in the playlist"),
     N_("Open subtitle file"),
-    N_("Dock/undock fullscreen controller to/from bottom of screen"), N_("This is a dummy button for testing"),
+    N_("Dock/undock fullscreen controller to/from bottom of screen"),
 
 };
 static const QString iconL[BUTTON_MAX] ={ ":/toolbar/play_b.svg", ":/toolbar/stop_b.svg",
@@ -136,7 +135,7 @@ static const QString iconL[BUTTON_MAX] ={ ":/toolbar/play_b.svg", ":/toolbar/sto
     ":/toolbar/frame.svg", ":/toolbar/reverse.svg", ":/toolbar/skip_back.svg",
     ":/toolbar/skip_fw.svg", ":/toolbar/clear.svg", ":/buttons/playlist/shuffle_on.svg",
     ":/buttons/playlist/repeat_all.svg", ":/menu/info.svg",
-    ":/toolbar/previous_b.svg", ":/toolbar/next_b.svg", ":/toolbar/eject.svg", ":/toolbar/space.svg", ":/toolbar/eject.svg", 
+    ":/toolbar/previous_b.svg", ":/toolbar/next_b.svg", ":/toolbar/eject.svg", ":/toolbar/space.svg", 
 };
 
 enum

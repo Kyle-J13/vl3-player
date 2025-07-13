@@ -499,18 +499,6 @@ QWidget *AbstractController::createWidget( buttonType_e button, int options )
     case TIME_LABEL_REMAINING:
         widget = new TimeLabel( p_intf, TimeLabel::Remaining );
         break;
-    case DUMMY_BUTTON: {
-        QToolButton *dummyButton = new QToolButton;
-        setupButton(dummyButton);
-        dummyButton->setText("Dummy");
-        dummyButton->setToolTip("This is a dummy button for testing");
-        dummyButton->setIcon(QIcon(":/toolbar/playlist.svg"));
-        CONNECT(dummyButton, clicked(), this, []() {
-            qDebug() << "Dummy button clicked!";
-        });
-        widget = dummyButton;
-        }
-        break;
     default:
         msg_Warn( p_intf, "This should not happen %i", button );
         break;

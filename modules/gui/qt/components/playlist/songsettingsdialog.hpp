@@ -5,8 +5,8 @@
 
 #include <QDialog>  
 
-class QSpinBox;    // Forward declaration to avoid pulling in the full QtSpinBox header
-
+// Forward declaration to avoid pulling in the full QtSpinBox header
+class QSpinBox;   
 
 //A dialog allowing the user to set a per song volume percentage.
 class SongSettingsDialog : public QDialog
@@ -15,8 +15,8 @@ class SongSettingsDialog : public QDialog
 
 public:
     /**
-     * @param uri    A unique identifier for the song, used as the key in QSettings.
-     * @param parent The parent widget for ownership and modal behavior.
+     * @param uri    A unique identifier for the song which is used as the key in QSettings.
+     * @param parent The parent widget for ownership
      */
     explicit SongSettingsDialog(const QString &uri, QWidget *parent = nullptr);
 

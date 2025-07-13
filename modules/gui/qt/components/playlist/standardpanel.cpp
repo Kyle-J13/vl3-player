@@ -211,7 +211,7 @@ bool StandardPLPanel::popup( const QPoint &point )
                                                             menu.addSeparator();
                                                             QAction *songSettingsAct = menu.addAction(tr("Song Settings…"));
                                                             connect(songSettingsAct, &QAction::triggered, this, [this, model, index]() {
-                                                                // grab the unique URI/MRL for this row
+                                                                // grab the unique URI for this row
                                                                 QString uri = model->getURI(index);
                                                                 SongSettingsDialog dlg(uri, this);
                                                                 dlg.exec();

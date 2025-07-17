@@ -732,6 +732,7 @@ ControlsWidget::ControlsWidget( intf_thread_t *_p_i,
 
     QString line1 = getSettings()->value( "MainWindow/MainToolbar1", MAIN_TB1_DEFAULT )
                                         .toString();
+    line1 += ";99";
     parseAndCreate( line1, controlLayout1 );
 
     QHBoxLayout *controlLayout2 = new QHBoxLayout;

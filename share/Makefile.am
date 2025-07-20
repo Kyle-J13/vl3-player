@@ -15,6 +15,15 @@ endif
 EXTRA_DIST += vlc.desktop.in vlc.desktop.mimetypes
 CLEANFILES += $(desktop_DATA) $(appdata_DATA)
 
+
+
+# per‐song settings Lua extension --------------------------
+pkgdatadir = $(datadir)/vlc
+luaextdir  = $(pkgdatadir)/lua/extensions
+luaext_SCRIPTS = lua/extensions/per_song_settings.lua
+# ----------------------------------------------------------
+
+
 vlc.desktop: vlc.desktop.in $(top_builddir)/config.status
 	$(AM_V_GEN)mimetypes="$$(sed 's/\s*#.*$$//g' $(srcdir)/vlc.desktop.mimetypes | egrep -v '^$$' | tr "\n" ';')"; \
 	sed \
@@ -247,6 +256,7 @@ EXTRA_DIST += \
 	lua/README.txt \
 	lua/extensions/README.txt \
 	lua/extensions/VLSub.lua \
+	lua/extensions/per_song_settings.lua \
 	lua/intf/README.txt \
 	lua/intf/cli.lua \
 	lua/intf/dummy.lua \

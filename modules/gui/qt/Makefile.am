@@ -112,8 +112,6 @@ libqt_plugin_la_SOURCES = \
 	gui/qt/components/playlist/playlist_model.hpp \
 	gui/qt/components/playlist/songsettingsdialog.cpp \
 	gui/qt/components/playlist/songsettingsdialog.hpp \
-	gui/qt/components/playlist/songsettingsapplier.cpp \
-    gui/qt/components/playlist/songsettingsapplier.hpp \
 	gui/qt/components/playlist/playlist_item.cpp \
 	gui/qt/components/playlist/playlist_item.hpp \
 	gui/qt/components/playlist/standardpanel.cpp \

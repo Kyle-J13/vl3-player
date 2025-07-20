@@ -41,6 +41,7 @@
 #include "dialogs/mediainfo.hpp"                  /* MediaInfoDialog */
 #include "util/qt_dirs.hpp"
 #include "util/imagehelper.hpp"
+#include "components/playlist/songsettingsdialog.hpp"
 
 #include <vlc_services_discovery.h>               /* SD_CMD_SEARCH */
 #include <vlc_intf_strings.h>                     /* POP_ */
@@ -206,6 +207,16 @@ bool StandardPLPanel::popup( const QPoint &point )
     ADD_MENU_ENTRY( QIcon( ":/menu/info.svg" ), qtr(I_POP_INFO),
                     VLCModelSubInterface::ACTION_INFO );
 
+    /**********************************************************************************************************************THUMPERLOIDS**********************************************************************************************************************/
+                                                            menu.addSeparator();
+                                                            QAction *songSettingsAct = menu.addAction(tr("Song Settings…"));
+                                                            connect(songSettingsAct, &QAction::triggered, this, [this, model, index]() {
+                                                                // grab the unique URI for this row
+                                                                QString uri = model->getURI(index);
+                                                                SongSettingsDialog dlg(uri, this);
+                                                                dlg.exec();
+                                                            });
+    /**********************************************************************************************************************THUMPERLOIDS**********************************************************************************************************************/
     menu.addSeparator();
 
     ADD_MENU_ENTRY( QIcon( ":/type/folder-grey.svg" ), qtr(I_POP_EXPLORE),

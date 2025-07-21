@@ -31,7 +31,8 @@
 #define  VLC_INTERNAL_PLAYLIST_SORT_FUNCTIONS
 #include "vlc_playlist.h"
 #include "playlist_internal.h"
-
+#include <stdlib.h>
+#include <time.h>
 
 /* General comparison functions */
 /**
@@ -144,9 +145,11 @@ void playlist_ItemArraySort( unsigned i_items, playlist_item_t **pp_items,
         unsigned i_new;
         playlist_item_t *p_temp;
 
-        for( i_position = i_items - 1; i_position > 0; i_position-- )
+        srand(time(0)); // seeds with current system time [1][2][3][6]
+
+        for (i_position = i_items - 1; i_position > 0; i_position--)
         {
-            i_new = ((unsigned)vlc_mrand48()) % (i_position+1);
+            i_new = rand() % (i_position + 1); // use rand() instead of vlc_mrand48() [2][3]
             p_temp = pp_items[i_position];
             pp_items[i_position] = pp_items[i_new];
             pp_items[i_new] = p_temp;
